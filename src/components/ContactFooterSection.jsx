@@ -350,9 +350,9 @@ export default function ContactFooterSection() {
       <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left text-xs font-mono text-slate-400">
         <div className="flex items-center gap-2">
           <img
-            src="/project/Logo_Jehan_Project__1_-removebg.png"
-            alt="Logo"
-            className="w-5 h-5 object-contain"
+            src="/project/jehan-logo-horizontal.png"
+            alt="Jehan Project"
+            className="h-5 w-20 shrink-0 object-contain"
           />
           <span>© 2026 Jehan Project by Farjehan Alaraf. Built with React, Tailwind CSS & Framer Motion.</span>
         </div>

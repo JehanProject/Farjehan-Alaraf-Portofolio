@@ -60,14 +60,15 @@ export default function FloatingDockNavbar({ onSelectTab, onOpenContactModal }) 
           <div className="relative w-9 h-9 rounded-full bg-gradient-to-tr from-blue-700 via-cyan-400 to-white p-[1.5px] transition-transform duration-300 group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(0,210,255,0.6)]">
             <div className="w-full h-full rounded-full bg-space-950 flex items-center justify-center overflow-hidden">
               <img 
-                src="/project/Logo_Jehan_Project__1_-removebg.png" 
+                src="/project/jehan-monogram.png"
                 alt="Jehan Project Logo" 
                 className="w-7 h-7 object-contain"
                 onError={(e) => {
-                  e.currentTarget.style.display = 'none';
+                  e.currentTarget.hidden = true;
+                  e.currentTarget.nextElementSibling.hidden = false;
                 }}
               />
-              <span className="font-display font-bold text-xs tracking-wider text-white">JP</span>
+              <span hidden className="font-display font-bold text-xs tracking-wider text-white">JP</span>
             </div>
           </div>
           <div className="hidden md:flex flex-col">
