@@ -5,125 +5,193 @@
 @layer base {
   html {
     color-scheme: dark;
-  }
-  
-  body {
-    background-color: #030712;
-    background-image: 
-      radial-gradient(at 15% 15%, rgba(0, 102, 255, 0.08) 0px, transparent 40%),
-      radial-gradient(at 85% 85%, rgba(0, 210, 255, 0.06) 0px, transparent 40%),
-      radial-gradient(at 50% 50%, rgba(255, 215, 0, 0.03) 0px, transparent 50%);
-    background-attachment: fixed;
-    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
 
-  /* Custom Smooth Scrollbar */
+  body {
+    overflow-x: hidden;
+    background: #030712;
+    color: #ffffff;
+    font-family: "Montserrat", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  button,
+  a,
+  input,
+  textarea {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  ::selection {
+    background: rgba(0, 102, 255, 0.75);
+    color: white;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
   }
+
   ::-webkit-scrollbar-track {
     background: #030712;
   }
+
   ::-webkit-scrollbar-thumb {
-    background: #1e293b;
-    border-radius: 9999px;
     border: 2px solid #030712;
+    border-radius: 999px;
+    background: #26334a;
   }
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #0066FF;
+    background: #0066ff;
   }
 }
 
-/* Glassmorphism Classes */
-.glass-panel {
-  background: rgba(10, 13, 24, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.portfolio-shell {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(0, 102, 255, 0.14), transparent 42rem),
+    #030712;
 }
 
-.glass-card {
-  background: rgba(10, 13, 24, 0.6);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.7);
+.portfolio-shell::before,
+.portfolio-shell::after {
+  position: absolute;
+  z-index: -1;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 9999px;
+  background: rgba(0, 102, 255, 0.1);
+  content: "";
+  filter: blur(140px);
+  pointer-events: none;
 }
 
-.glass-card:hover {
-  border-color: rgba(0, 210, 255, 0.35);
-  box-shadow: 0 15px 35px -10px rgba(0, 102, 255, 0.25);
+.portfolio-shell::before {
+  top: 24rem;
+  left: -25rem;
 }
 
-/* Neon Glow Utilities */
-.text-glow-blue {
-  text-shadow: 0 0 18px rgba(0, 210, 255, 0.6), 0 0 35px rgba(0, 102, 255, 0.4);
+.portfolio-shell::after {
+  top: 105rem;
+  right: -27rem;
+  background: rgba(255, 215, 0, 0.055);
 }
 
-.text-glow-gold {
-  text-shadow: 0 0 18px rgba(255, 215, 0, 0.6), 0 0 35px rgba(255, 193, 7, 0.3);
+.section-container {
+  width: min(100% - 2rem, 80rem);
+  margin-inline: auto;
 }
 
-.box-glow-blue {
-  box-shadow: 0 0 25px -5px rgba(0, 210, 255, 0.3);
+.section-kicker {
+  color: #60a5fa;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
-.box-glow-gold {
-  box-shadow: 0 0 25px -5px rgba(255, 215, 0, 0.3);
+.section-title {
+  font-family: "Unbounded", "Montserrat", sans-serif;
+  font-size: clamp(1.8rem, 4vw, 3.1rem);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 1.2;
 }
 
-/* Shimmer Animation Text */
-.text-shimmer {
-  background: linear-gradient(
-    90deg,
-    #ffffff 0%,
-    #00d2ff 25%,
-    #ffd700 50%,
-    #0066ff 75%,
-    #ffffff 100%
-  );
-  background-size: 200% auto;
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text;
-  animation: textShimmer 4s ease-in-out infinite;
+.section-copy {
+  color: #94a3b8;
+  line-height: 1.8;
 }
 
-@keyframes textShimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+.blue-glow {
+  box-shadow: 0 0 0 1px rgba(0, 102, 255, 0.22), 0 24px 80px -42px rgba(0, 102, 255, 0.45);
 }
 
-/* Orbit Ring Animations */
-@keyframes orbit-cw {
+.blue-grid {
+  background-image: linear-gradient(rgba(148, 163, 184, 0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.id-card-lanyard {
+  background: linear-gradient(90deg, #063e9d 0%, #0b63e5 42%, #063e9d 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18), 0 8px 24px rgba(0, 0, 0, 0.28);
+}
+
+.barcode-lines {
+  background: repeating-linear-gradient(90deg, #e2e8f0 0 2px, transparent 2px 4px, #e2e8f0 4px 5px, transparent 5px 8px);
+}
+
+.qr-pixel {
+  background: #dbeafe;
+}
+
+@keyframes tech-marquee {
   from {
-    transform: rotate(0deg);
+    transform: translateX(0);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateX(-50%);
   }
 }
 
-@keyframes orbit-ccw {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
+.animate-tech-marquee {
+  animation: tech-marquee 36s linear infinite;
+}
+
+.animate-tech-marquee:hover {
+  animation-play-state: paused;
+}
+
+.editorial-reveal-word {
+  display: inline-block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+  vertical-align: bottom;
+}
+
+.editorial-reveal-word > span {
+  display: inline-block;
+}
+
+.cursor-glow {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border: 1px solid rgba(96, 165, 250, 0.9);
+  border-radius: 9999px;
+  background: rgba(0, 102, 255, 0.28);
+  box-shadow: 0 0 18px rgba(0, 102, 255, 0.7);
+  pointer-events: none;
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-glow {
+    display: none;
   }
 }
 
-.animate-orbit-cw {
-  animation: orbit-cw 18s linear infinite;
+@media (max-width: 640px) {
+  .section-container {
+    width: min(100% - 1.5rem, 80rem);
+  }
 }
 
-.animate-orbit-ccw {
-  animation: orbit-ccw 24s linear infinite;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

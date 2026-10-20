@@ -9,29 +9,29 @@ export default {
       colors: {
         space: {
           950: '#030712',
-          900: '#060A17',
-          850: '#0A0D18',
-          800: '#0F172A',
-          700: '#1E293B',
-          600: '#334155',
+          900: '#0A0D18',
+          850: '#111827',
+          800: '#1E293B',
+          700: '#334155',
+          600: '#475569',
         },
         electric: {
-          light: '#00D2FF',
+          light: '#60A5FA',
           DEFAULT: '#0066FF',
-          dark: '#0047AB',
-          glow: 'rgba(0, 210, 255, 0.4)',
+          dark: '#0047B3',
+          glow: 'rgba(0, 102, 255, 0.4)',
         },
         gold: {
-          light: '#FFE249',
+          light: '#FFE566',
           DEFAULT: '#FFD700',
           dark: '#B8860B',
           glow: 'rgba(255, 215, 0, 0.35)',
         }
       },
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
-        display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'sans-serif'],
+        sans: ['"Montserrat"', 'Arial', 'sans-serif'],
+        mono: ['"Montserrat"', 'Arial', 'sans-serif'],
+        display: ['"Unbounded"', '"Montserrat"', 'sans-serif'],
       },
       animation: {
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
