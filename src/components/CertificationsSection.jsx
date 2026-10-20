@@ -16,6 +16,18 @@ const certifications = [
     file: '/project/Course_Completion_Certificate.pdf',
   },
   {
+    issuer: 'Fakultas Sains dan Teknologi · UIN Imam Bonjol Padang',
+    title: 'Webinar Lecture Series: Sosial Media Analitik',
+    summary: 'Peserta webinar Lecture Series, 1 Oktober 2026.',
+    file: '/project/Sertifikat%20Lecture%20Series.pdf',
+  },
+  {
+    issuer: 'Fakultas Sains dan Teknologi · UIN Imam Bonjol Padang',
+    title: 'Webinar Lecture Series: Memahami Pengguna, Organisasi, dan Tata Kelola TI',
+    summary: 'Peserta webinar Lecture Series, 2 Oktober 2026.',
+    file: '/project/Sertifikat%20Lecture%20Series%20(1).pdf',
+  },
+  {
     issuer: 'Public Speaking',
     title: 'Delivery Mastery',
     summary: 'Keterampilan komunikasi efektif dan presentasi.',
